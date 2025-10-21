@@ -12,4 +12,9 @@ C is called a mid-level language because:
 - A token is the fundamental building block of a program that helps the compiler understand and translate the source code. 
 - In essence, every word, number, operator, or symbol that has meaning to the compiler is considered a token.
 
+## What is the use of printf() and scanf() functions? Also explain format specifiers? 
+- printf() is used for displaying output.
+- scanf() is used for taking input.
+- Format specifiers define the type and format of data for input and output, ensuring correct handling of variables.
+
 ## 
