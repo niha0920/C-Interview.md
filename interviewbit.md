@@ -41,3 +41,17 @@ The value of 5["abxdef"] is the character 'f' in C.
 - The most common and portable way to convert a number to a string in C is with sprintf() by specifying appropriate format specifiers.
 - This allows converting integers, floats, and other number types conveniently and storing them as strings for further use.
 
+## What is recursion in C?
+- Recursion in C enables elegant solutions for problems that can be defined in terms of smaller instances of themselves.
+- It consists of recursive calls progressing toward a base case and is a core concept used in algorithms, mathematical computations, and data structure operations like tree and graph traversal.
+
+## Why doesn’t C support function overloading?
+C doesn’t support function overloading because:
+- Its compiler does not perform name mangling.
+- It only differentiates functions by name, not by argument type or number.
+- It was designed as a procedural language, not for object-oriented features like polymorphism.​
+
+## What is the difference between global int and static int declaration?
+- A global int is accessible throughout the entire program and across multiple files, exhibiting external linkage.
+- A static int declared globally has its scope limited to the defining file (internal linkage), preventing access from other files. When declared inside a function, it maintains its value between function calls but remains local to that function.
+- Both have the same lifetime (during program execution) but differ in their visibility and scope.
