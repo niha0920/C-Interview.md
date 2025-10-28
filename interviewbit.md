@@ -55,3 +55,59 @@ C doesn’t support function overloading because:
 - A global int is accessible throughout the entire program and across multiple files, exhibiting external linkage.
 - A static int declared globally has its scope limited to the defining file (internal linkage), preventing access from other files. When declared inside a function, it maintains its value between function calls but remains local to that function.
 - Both have the same lifetime (during program execution) but differ in their visibility and scope.
+
+## What is a pointer in C?
+A pointer is a special variable in C that stores and manipulates the address of another variable, enabling direct memory access and efficient programming techniques essential for system-level and embedded programming.
+
+## Difference between const char* p and char const* p?
+| Declaration          |  Meaning                                     |
+| -------------------- | -------------------------------------------- |
+| const char *p        |  Pointer to constant char (data is const)    |
+| char const *p        |  Same as above                               |
+| char *const p        |  Constant pointer to char (pointer is const) |
+| const char *const p  |  Constant pointer to constant char           |
+- Thus, const char* p and char const* p are interchangeable and mean the same thing.
+
+## What is pointer to pointer in C?
+- A pointer to pointer in C is a variable that stores the address of another pointer, allowing multiple levels of indirection to access or modify data.
+- This concept is widely used for dynamic data structures and advanced memory handling.
+
+## Why n++ executes faster than n+1 ?
+- In theory and low-level CPU instructions, n++ (increment) is faster than n = n + 1 (add and assign) because it is a simpler, atomic operation.
+- In practice, modern compilers optimize both into the same machine code, making their execution speed effectively identical.
+- The choice should be based on clarity and intent rather than speed in typical modern programming environments.
+
+## What is typecasting in C?
+- Typecasting in C is a way to explicitly convert one data type into another to control how data is interpreted and manipulated during program execution.
+- It is an essential tool for precise type handling and accurate operations in C programming.
+
+## What are the advantages of Macro over function?
+- Macros offer speed and flexibility advantages for small, repeated code snippets or platform-dependent code.
+- However, they lack type safety and can increase code size, so functions are preferred for maintainability and debugging except in specific performance-critical or generic scenarios.
+
+## What are Enumerations?
+Enumerations in C are a powerful way to create a set of named integer constants, improving code clarity, reducing errors, and aiding maintainability by replacing numeric literals with descriptive names.
+
+## When should we use the register storage specifier?
+- You should use the register storage specifier to hint the compiler to store frequently accessed local variables in CPU registers to improve execution speed.
+- However, modern compilers optimize automatically, and the register keyword is often ignored today.
+
+## Specify different types of decision control statements?
+
+## What is an r-value and l-value?
+
+## What is the difference between malloc() and calloc()?
+
+## What is the difference between struct and union in C?
+
+## What is call by reference in functions?
+
+## What is pass by reference in functions?
+
+## What is a memory leak? How to avoid it?
+
+## What is Dynamic memory allocation in C? Name the dynamic allocation functions.
+
+## What is typedef?
+
+## Why is it usually a bad idea to use gets()? Suggest a workaround.
