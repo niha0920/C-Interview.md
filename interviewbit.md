@@ -93,16 +93,37 @@ Enumerations in C are a powerful way to create a set of named integer constants,
 - However, modern compilers optimize automatically, and the register keyword is often ignored today.
 
 ## Specify different types of decision control statements?
+| Statement Type | Purpose                                       |
+| -------------- | --------------------------------------------- |
+| if             | Executes code block if condition is true      |
+| if-else        | Executes code block for true/false conditions |
+| nested if      | Handles multiple, nested conditions           |
+| else-if ladder | Checks multiple conditions in sequence        | 
+| switch         | Selects block based on variable’s value       |
+- These statements help control the logical flow of a program by allowing choices based on conditions.
 
 ## What is an r-value and l-value?
+- l-value: Has a memory address, can be assigned to.
+- r-value: Does not have a memory address, represents a value, cannot be assigned to.
 
 ## What is the difference between malloc() and calloc()?
+| Feature        | malloc()                       | calloc()                             |
+| -------------- | ------------------------------ | ------------------------------------ |
+| Initialization | No (memory has garbage values) | Yes (memory set to zero)             |
+| Arguments      | One (total bytes)              | Two (num elements, size of each)     |
+| Speed          | Faster                         | Slower                               |
+| Syntax         | void *malloc(size_t size);     | void *calloc(size_t n, size_t size); |
+- Both functions return a pointer to the allocated memory block or NULL if allocation fails.
 
 ## What is the difference between struct and union in C?
+- Structure: Use when you want to store and use multiple member values at the same time.
+- Union: Use when you need only one member at a time, saving memory by storing different data types in the same location.
 
 ## What is call by reference in functions?
+Call by reference allows passing variables to functions by their address, enabling the function to modify the original variables directly rather than working with copies, thus providing efficient and flexible parameter passing.
 
 ## What is pass by reference in functions?
+
 
 ## What is a memory leak? How to avoid it?
 
