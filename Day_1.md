@@ -166,3 +166,72 @@ p = NULL;   // Good practice — avoids accidental use
 - Memory leaks happen in heap, not in stack.
 ## 3. Explain pointer-to-const vs const pointer.
 ### (a) Pointer to const
+```c
+const int *p;
+```
+- You cannot modify the value being pointed to (`*p`),
+- but you can change where it points.
+#### Example:
+```c
+const int a = 10, b = 20;
+const int *p = &a;
+p = &b;       // ✅ OK
+//*p = 30;    // ❌ Error — can't modify value
+```
+### (b) Const pointer
+```c 
+int *const p;
+```
+- You can modify the value pointed to,
+- but cannot change the pointer’s address.
+#### Example:
+```c
+int a = 10, b = 20;
+int *const p = &a;
+*p = 30;    // ✅ OK
+//p = &b;   // ❌ Error — pointer is constant
+```
+### (c) Const pointer to const
+```c
+const int *const p = &a;
+```
+Neither pointer nor value can be modified.
+## 4. What are the 4 types of storage classes?
+| Storage Class | Keyword    | Memory Location             | Default Value | Scope        | Lifetime       |
+| ------------- | ---------- | --------------------------- | ------------- | ------------ | -------------- |
+| **Automatic** | `auto`     | Stack                       | Garbage       | Block        | Function ends  |
+| **Register**  | `register` | CPU register (if available) | Garbage       | Block        | Function ends  |
+| **Static**    | `static`   | Data segment                | Zero          | Block/Global | Entire program |
+| **External**  | `extern`   | Data segment                | Zero          | Global       | Entire program |
+#### Example:
+```c
+auto int a = 10;        // local variable (default)
+register int i = 0;     // stored in CPU register (maybe)
+static int count = 0;   // retains value between calls
+extern int globalVar;   // defined in another file
+```
+## 5. How is memory allocated for a 2D array dynamically?
+### Array of pointers
+```c
+int rows = 3, cols = 4;
+int **arr = malloc(rows * sizeof(int*));
+for (int i = 0; i < rows; i++)
+    arr[i] = malloc(cols * sizeof(int));
+```
+#### To access:
+```c
+arr[i][j] = i + j;
+```
+#### To free:
+```c
+for (int i = 0; i < rows; i++)
+    free(arr[i]);
+free(arr);
+```
+## 6. What’s the size of struct {char a; int b;} on a 32-bit system? (→ 8 bytes due to padding)
+```c
+struct sample {
+    char a;
+    int b;
+};
+```
