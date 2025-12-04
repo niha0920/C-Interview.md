@@ -235,3 +235,21 @@ struct sample {
     int b;
 };
 ```
+### Memory layout
+| Member      | Size    | Offset |
+| ----------- | ------- | ------ |
+| `a`         | 1 byte  | 0      |
+| **Padding** | 3 bytes | 1–3    |
+| `b`         | 4 bytes | 4–7    |
+- Total = 8 bytes
+#### Reason:
+To maintain alignment, compiler inserts padding bytes so that each `int` starts at a multiple of 4 bytes (on 32-bit systems).
+```c
+#include <stdio.h>
+struct sample { char a; int b; };
+
+int main() {
+    printf("Size = %zu\n", sizeof(struct sample));
+    return 0;
+}
+```
